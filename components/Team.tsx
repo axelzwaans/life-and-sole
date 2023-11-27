@@ -66,88 +66,86 @@ const Team = () => {
     <div className="text-center md:mt-20" id="team">
       <h1 className={`${bebasneue.className} text-center`}>Meet The Team</h1>
 
-      <div className="justify-center items-center flex">
-        <div className="flex flex-col lg:flex-row">
-          <Tabs defaultValue="Dan" className="w-[400px] m-14">
-            <h2 className={`${bebasneue.className} border-b border-[#ff0000]`}>
-              Trainers
-            </h2>
-            <TabsList className="m-6 rounded-sm">
-              {trainerData.map((trainer, index) => (
-                <TabsTrigger
-                  key={index}
-                  value={trainer.name}
-                  className="w-[80px] tracking-wider uppercase"
-                >
-                  {trainer.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+      <div className="flex flex-col justify-center lg:items-start items-center lg:flex-row">
+        <Tabs defaultValue="Dan" className="w-[400px] m-14">
+          <h2 className={`${bebasneue.className} border-b border-[#ff0000]`}>
+            Trainers
+          </h2>
+          <TabsList className="m-6 rounded-sm">
             {trainerData.map((trainer, index) => (
-              <TabsContent
+              <TabsTrigger
                 key={index}
                 value={trainer.name}
-                className="items-center flex flex-col"
+                className="w-[80px] tracking-wider uppercase"
               >
-                <div className="m-4 space-x-6 flex flex-row items-center justify-between">
-                  <div>
-                    <Image
-                      src={trainer.image}
-                      alt="trainer"
-                      width={150}
-                      height={150}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-xl p-2 text-left border-b border-black">
-                      Qualifications
-                    </h3>
-                    <ul className="p-2 text-left list-disc">
-                      {trainer.qualifications.map((qualification, index) => (
-                        <li key={index}>{qualification}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <p className="text-left">{trainer.description}</p>
-              </TabsContent>
+                {trainer.name}
+              </TabsTrigger>
             ))}
-          </Tabs>
-
-          <Tabs defaultValue="Laura" className="w-[400px] m-14">
-            <h2 className={`${bebasneue.className} border-b border-[#ff0000]`}>
-              Therapists
-            </h2>
-            <TabsList className="m-6 rounded-sm">
-              {therapistData.map((therapist, index) => (
-                <TabsTrigger
-                  key={index}
-                  value={therapist.name}
-                  className="w-[80px] tracking-wider uppercase"
-                >
-                  {therapist.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            {therapistData.map((therapist, index) => (
-              <TabsContent
-                key={index}
-                value={therapist.name}
-                className="items-center flex flex-col"
-              >
-                <div className="m-4">
+          </TabsList>
+          {trainerData.map((trainer, index) => (
+            <TabsContent
+              key={index}
+              value={trainer.name}
+              className="items-center flex flex-col"
+            >
+              <div className="m-4 space-x-6 flex flex-row items-center justify-between">
+                <div>
                   <Image
-                    src={therapist.image}
-                    alt="therapist"
+                    src={trainer.image}
+                    alt="trainer"
                     width={150}
                     height={150}
                   />
                 </div>
-                <p className="text-left">{therapist.description}</p>
-              </TabsContent>
+                <div>
+                  <h3 className="text-xl p-2 text-left border-b border-black">
+                    Qualifications
+                  </h3>
+                  <ul className="p-2 text-left list-disc">
+                    {trainer.qualifications.map((qualification, index) => (
+                      <li key={index}>{qualification}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <p className="text-left">{trainer.description}</p>
+            </TabsContent>
+          ))}
+        </Tabs>
+
+        <Tabs defaultValue="Laura" className="w-[400px] m-14">
+          <h2 className={`${bebasneue.className} border-b border-[#ff0000]`}>
+            Therapists
+          </h2>
+          <TabsList className="m-6 rounded-sm">
+            {therapistData.map((therapist, index) => (
+              <TabsTrigger
+                key={index}
+                value={therapist.name}
+                className="w-[80px] tracking-wider uppercase"
+              >
+                {therapist.name}
+              </TabsTrigger>
             ))}
-          </Tabs>
-        </div>
+          </TabsList>
+          {therapistData.map((therapist, index) => (
+            <TabsContent
+              key={index}
+              value={therapist.name}
+              className="items-center flex flex-col"
+            >
+              <div className="m-4">
+                <Image
+                  src={therapist.image}
+                  alt="therapist"
+                  width={150}
+                  height={150}
+                />
+              </div>
+              <p className="text-left">{therapist.description}</p>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </div>
   );
