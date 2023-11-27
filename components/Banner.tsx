@@ -9,7 +9,7 @@ const Banner = () => {
     >
       <h2 className={`${bebasneue.className} p-20`}>
         Life & Sole is a modern, 3000ft2 personal training, rehabilitation and
-        group exercise conditioning facility. It's run by qualified,
+        group exercise conditioning facility. It&apos;s run by qualified,
         knowledgeable and experienced staff, always on hand to assist or advise.
       </h2>
     </div>

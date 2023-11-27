@@ -34,8 +34,8 @@ const ContactForm = () => {
   return (
     <form className="flex flex-col gap-y-4 w-[400px]" onSubmit={handleSubmit}>
       <h3 className="border-b border-[#ff0000] w-fit text-left">
-        Do you have any questions? <br /> Send us a message and we'll get back
-        to you.
+        Do you have any questions? <br /> Send us a message and we&apos;ll get
+        back to you.
       </h3>
       <div className="relative flex items-center">
         <Input
