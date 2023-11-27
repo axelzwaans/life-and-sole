@@ -3,6 +3,13 @@
 import { useState } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { CiUser, CiMail, CiInboxIn } from "react-icons/ci";
 import { FaRegMessage } from "react-icons/fa6";
@@ -32,7 +39,10 @@ const JoinForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-y-4 w-[400px]" onSubmit={handleSubmit}>
+    <form
+      className="flex flex-col gap-y-4 w-[400px] my-8"
+      onSubmit={handleSubmit}
+    >
       <h3 className="border-b border-[#ff0000] w-fit text-left">
         Fill in the membership enquiry form below.
       </h3>
@@ -63,14 +73,32 @@ const JoinForm = () => {
       <div className="relative flex items-center">
         <Input
           required
-          type="text"
-          name="subject"
+          type="number"
+          name="number"
           value={form.subject}
-          placeholder="Subject"
+          placeholder="Mobile Number"
           onChange={handleChange}
           minLength={2}
         />
         <CiInboxIn className="absolute right-6" size={20} />
+      </div>
+      <div className="relative flex items-center text-gray-400">
+        <Select>
+          <SelectTrigger>
+            <SelectValue placeholder="Membership interest" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="general">General Membership</SelectItem>
+            <SelectItem value="gymandcardio">
+              Gym & Cardio Membership
+            </SelectItem>
+            <SelectItem value="unlimited">
+              Unlimited Class Membership
+            </SelectItem>
+            <SelectItem value="family">Family Membership</SelectItem>
+            <SelectItem value="senior">Senior Membership</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       <div className="relative flex items-center">
         <Textarea

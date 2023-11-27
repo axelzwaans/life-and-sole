@@ -1,17 +1,16 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FiChevronsDown, FiChevronsLeft } from "react-icons/fi";
-import { GoDotFill } from "react-icons/go";
+import { FiChevronsLeft } from "react-icons/fi";
 import { bebasneue } from "../layout";
-import hero from "@/public/hero.jpg";
+import joinImage from "@/public/joinImage.jpg";
 import JoinForm from "@/components/JoinForm";
 
 const page = () => {
   return (
     <div className="top-0 left-0 h-full">
       <div className="flex flex-col-reverse lg:flex-row bg-black/95">
-        <div className="flex flex-col mt-[150px]">
+        <div className="flex flex-col mt-[100px]">
           <div className="p-2 ml-4 lg:w-[600px] w-fit">
             <h1 className={`${bebasneue.className} text-white`}>
               Sign up today
@@ -43,7 +42,7 @@ const page = () => {
               </div>
             </div>
             <Link href="/">
-              <div className="ml-4 mt-10 animate-pulse">
+              <div className="ml-4 animate-pulse">
                 <FiChevronsLeft size={40} />
               </div>
             </Link>
@@ -51,7 +50,7 @@ const page = () => {
         </div>
         <div className="lg:h-screen hidden lg:block">
           <Image
-            src={hero}
+            src={joinImage}
             alt="hero image"
             className="opacity-40 object-cover h-[300px] lg:h-screen"
           />
